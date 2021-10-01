@@ -33,7 +33,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txtNavigation = new System.Windows.Forms.TextBox();
+            this.numNavigation = new System.Windows.Forms.NumericUpDown();
             this.btnLast = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
@@ -58,9 +58,11 @@
             this.lblNamen = new System.Windows.Forms.Label();
             this.txtPersNr = new System.Windows.Forms.TextBox();
             this.lblPersNr = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numNavigation)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +95,7 @@
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "-";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -102,10 +105,11 @@
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "+";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.txtNavigation);
+            this.panel4.Controls.Add(this.numNavigation);
             this.panel4.Controls.Add(this.btnLast);
             this.panel4.Controls.Add(this.btnNext);
             this.panel4.Controls.Add(this.btnPrevious);
@@ -116,13 +120,23 @@
             this.panel4.Size = new System.Drawing.Size(268, 47);
             this.panel4.TabIndex = 7;
             // 
-            // txtNavigation
+            // numNavigation
             // 
-            this.txtNavigation.Location = new System.Drawing.Point(88, 10);
-            this.txtNavigation.Name = "txtNavigation";
-            this.txtNavigation.ReadOnly = true;
-            this.txtNavigation.Size = new System.Drawing.Size(93, 20);
-            this.txtNavigation.TabIndex = 11;
+            this.numNavigation.Location = new System.Drawing.Point(88, 9);
+            this.numNavigation.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numNavigation.Name = "numNavigation";
+            this.numNavigation.Size = new System.Drawing.Size(93, 20);
+            this.numNavigation.TabIndex = 11;
+            this.numNavigation.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numNavigation.ValueChanged += new System.EventHandler(this.numNavigation_ValueChanged);
             // 
             // btnLast
             // 
@@ -166,6 +180,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -226,6 +241,7 @@
             this.txtPensum.Name = "txtPensum";
             this.txtPensum.Size = new System.Drawing.Size(89, 20);
             this.txtPensum.TabIndex = 15;
+            this.txtPensum.Text = "1";
             // 
             // lblPensum
             // 
@@ -242,6 +258,7 @@
             this.txtSalaer.Name = "txtSalaer";
             this.txtSalaer.Size = new System.Drawing.Size(78, 20);
             this.txtSalaer.TabIndex = 13;
+            this.txtSalaer.Text = "1";
             // 
             // lblSalaer
             // 
@@ -258,6 +275,7 @@
             this.txtEintrittsjahr.Name = "txtEintrittsjahr";
             this.txtEintrittsjahr.Size = new System.Drawing.Size(78, 20);
             this.txtEintrittsjahr.TabIndex = 11;
+            this.txtEintrittsjahr.Text = "1";
             // 
             // lblEintrittsjahr
             // 
@@ -276,6 +294,7 @@
             this.txtOrt.Name = "txtOrt";
             this.txtOrt.Size = new System.Drawing.Size(133, 20);
             this.txtOrt.TabIndex = 9;
+            this.txtOrt.Text = "d";
             // 
             // label2
             // 
@@ -292,6 +311,7 @@
             this.txtPLZ.Name = "txtPLZ";
             this.txtPLZ.Size = new System.Drawing.Size(54, 20);
             this.txtPLZ.TabIndex = 7;
+            this.txtPLZ.Text = "1";
             // 
             // lblPLZ
             // 
@@ -310,6 +330,7 @@
             this.txtVornamen.Name = "txtVornamen";
             this.txtVornamen.Size = new System.Drawing.Size(223, 20);
             this.txtVornamen.TabIndex = 5;
+            this.txtVornamen.Text = "d";
             // 
             // lblVornamen
             // 
@@ -328,6 +349,7 @@
             this.txtNamen.Name = "txtNamen";
             this.txtNamen.Size = new System.Drawing.Size(223, 20);
             this.txtNamen.TabIndex = 3;
+            this.txtNamen.Text = "d";
             // 
             // lblNamen
             // 
@@ -345,6 +367,7 @@
             this.txtPersNr.ReadOnly = true;
             this.txtPersNr.Size = new System.Drawing.Size(54, 20);
             this.txtPersNr.TabIndex = 1;
+            this.txtPersNr.Text = "0";
             // 
             // lblPersNr
             // 
@@ -354,6 +377,16 @@
             this.lblPersNr.Size = new System.Drawing.Size(42, 13);
             this.lblPersNr.TabIndex = 0;
             this.lblPersNr.Text = "PersNr:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(312, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(27, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "S";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmHaupt
             // 
@@ -370,7 +403,7 @@
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numNavigation)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -385,7 +418,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox txtNavigation;
         private System.Windows.Forms.Button btnLast;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnPrevious;
@@ -410,6 +442,8 @@
         private System.Windows.Forms.Label lblSalaer;
         private System.Windows.Forms.TextBox txtEintrittsjahr;
         private System.Windows.Forms.Label lblEintrittsjahr;
+        private System.Windows.Forms.NumericUpDown numNavigation;
+        private System.Windows.Forms.Button button1;
     }
 }
 
