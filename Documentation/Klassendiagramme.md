@@ -4,6 +4,7 @@
 
 ### Typ 1 «instanziiert»
 Wenn wir ein Objekt erstellen, welches ein anderes Objekt verwendet, ohne dessen Referenz als Membervariable zu speichern, handelt es sich um eine lose «inszanziiert» Beziehung.
+
 ### Typ 2 «use»
 Wenn wir auf ein statisches Element einer anderen Klasse zugreifen, handelt es sich um eine lose «use» Beziehung.
 
